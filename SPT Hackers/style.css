@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+
+
+#app {
+    max-width: 600px;
+    margin: auto;
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: lightcyan;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background: grey;
+
+
+}
+
+.bg {
+    background-image: url("https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148888785.jpg?w=1380&t=st=1728970279~exp=1728970879~hmac=403a0c1d1db7934df02343dda915dde175e50a3d4af4896d22fad095e2016a69");
+}
+
+#modelContainer {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+}
