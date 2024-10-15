@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to 3D Image Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input[type="text"] { width: 300px; padding: 10px; }
+        button { padding: 10px 20px; }
+        img { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Text to 3D Image Generator</h1>
+    <form id="generate-form">
+        <input type="text" name="input_text" placeholder="Enter text..." required>
+        <button type="submit">Generate 3D Image</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('generate-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            fetch('/generate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    document.getElementById('output').innerHTML = `<img src="${data.image_url}" alt="Generated 3D Image" width="300px">`;
+                } else {
+                    document.getElementById('output').innerHTML = `<p style="color: red;">${data.message}</p>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
